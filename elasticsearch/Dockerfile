@@ -3,5 +3,5 @@ ARG ELK_VERSION
 # https://www.docker.elastic.co/
 FROM docker.elastic.co/elasticsearch/elasticsearch:${ELK_VERSION}
 
-# Add your elasticsearch plugins setup here
-# Example: RUN elasticsearch-plugin install analysis-icu
+# https://github.com/synhershko/elasticsearch-analysis-hebrew
+RUN elasticsearch-plugin install https://bintray.com/synhershko/elasticsearch-analysis-hebrew/download_file?file_path=elasticsearch-analysis-hebrew-5.5.3.zip
