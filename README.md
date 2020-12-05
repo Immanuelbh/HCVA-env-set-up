@@ -3,11 +3,6 @@
 
 This library is intended to be used as a submodule for the [HebrewCourtVerdictsAnalyzer](https://github.com/Immanuelbh/HebrewCourtVerdictsAnalyzer).
 
-# Elastic stack (ELK) on Docker
-
-[![Build Status](https://github.com/deviantony/docker-elk/workflows/CI/badge.svg?branch=release-5.x)](https://github.com/deviantony/docker-elk/actions?query=workflow%3ACI+branch%3Arelease-5.x)
-[![Join the chat at https://gitter.im/deviantony/docker-elk](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/deviantony/docker-elk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 Run the version 5.x of the [Elastic stack][elk-stack] with Docker and Docker Compose.
 
 | :warning: Important notice: This release version of the Elastic stack is marked as End Of Life by Elastic and is not supported anymore, see [Elastic maintenance tables](https://www.elastic.co/support/eol) for more details. |
@@ -16,33 +11,13 @@ Run the version 5.x of the [Elastic stack][elk-stack] with Docker and Docker Com
 It gives you the ability to analyze any data set by using the searching/aggregation capabilities of Elasticsearch and
 the visualization power of Kibana.
 
-*:information_source: The Docker images backing this stack include [X-Pack][xpack] with [paid features][paid-features]
-enabled by default (see [How to disable paid features](#how-to-disable-paid-features) to disable them). **The [trial
-license][trial-license] is valid for 30 days**. After this license expires, you can continue using the free features
-seamlessly, without losing any data.*
+*:information_source: The Docker images backing this stack includes [X-Pack][xpack] based on the [basic plan](https://www.elastic.co/subscriptions) *
 
 Based on the official Docker images from Elastic:
 
 * [Elasticsearch](https://github.com/elastic/elasticsearch/tree/master/distribution/docker)
 * [Logstash](https://github.com/elastic/logstash/tree/master/docker)
 * [Kibana](https://github.com/elastic/kibana/tree/master/src/dev/build/tasks/os_packages/docker_generator)
-
-Other available stack variants:
-
-* [`tls`](https://github.com/deviantony/docker-elk/tree/tls): TLS encryption enabled in Elasticsearch. _Regularly
-  rebased onto `master`_
-* [`searchguard`](https://github.com/deviantony/docker-elk/tree/searchguard): Search Guard support
-
----
-
-## Philosophy
-
-We aim at providing the simplest possible entry into the Elastic stack for anybody who feels like experimenting with
-this powerful combo of technologies. This project's default configuration is purposely minimal and unopinionated. It
-does not rely on any external dependency or custom automation to get things up and running.
-
-Instead, we believe in good documentation so that you can use this repository as a template, tweak it, and make it _your
-own_. [sherifabdlnaby/elastdocker][elastdocker] is one example among others of project that builds upon this idea.
 
 ---
 
@@ -163,8 +138,6 @@ $ docker-compose down -v
 ## Initial setup
 
 ### Setting up user authentication
-
-*:information_source: Refer to [How to disable paid features](#how-to-disable-paid-features) to disable authentication.*
 
 The stack is pre-configured with the following **privileged** bootstrap user:
 
