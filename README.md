@@ -1,6 +1,6 @@
 # Elastic stack (ELK) on Docker
 
-[![Elastic Stack version](https://img.shields.io/badge/Elastic%20Stack-7.10.0-00bfb3?style=flat&logo=elastic-stack)](https://www.elastic.co/blog/category/releases)
+[![Elastic Stack version](https://img.shields.io/badge/Elastic%20Stack-7.10.2-00bfb3?style=flat&logo=elastic-stack)](https://www.elastic.co/blog/elastic-stack-7-10-2-released)
 [![Build Status](https://github.com/deviantony/docker-elk/workflows/CI/badge.svg?branch=release-7.x)](https://github.com/deviantony/docker-elk/actions?query=workflow%3ACI+branch%3Arelease-7.x)
 [![Join the chat at https://gitter.im/deviantony/docker-elk](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/deviantony/docker-elk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -133,7 +133,12 @@ performing a stack upgrade.**
 Clone this repository onto the Docker host that will run the stack, then start services locally using Docker Compose:
 
 ```console
-$ docker-compose up
+$ docker-compose up -d [--build]
+```
+
+#### Dev
+```console
+$ docker-compose build --no-cache
 ```
 
 You can also run all services in the background (detached mode) by adding the `-d` flag to the above command.
