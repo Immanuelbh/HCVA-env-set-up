@@ -76,10 +76,23 @@ services:
         MONGO_VERSION: $MONGO_VERSION
     restart: always
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_ROOT_USERNAME: $MONGO_ADMIN_USERNAME
+      MONGO_INITDB_ROOT_PASSWORD: $MONGO_ADMIN_PASSWORD
     ports:
       - "27017:27017"
+
+  mongo-express:
+    build:
+      context: mongo-express/
+      args:
+        ME_VERSION: $ME_VERSION
+    restart: always
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: $MONGO_ADMIN_USERNAME
+      ME_CONFIG_MONGODB_ADMINPASSWORD: $MONGO_ADMIN_PASSWORD
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: $ME_CONFIG_MONGODB_ENABLE_ADMIN
+    ports:
+      - "8081:8081"
 
 networks:
   elk:

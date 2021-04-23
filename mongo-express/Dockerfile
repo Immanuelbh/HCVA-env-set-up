@@ -1,0 +1,3 @@
+ARG ME_VERSION
+
+FROM mongo-express:${ME_VERSION}
