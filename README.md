@@ -1,3 +1,5 @@
+# This version is currently **NOT** supported on by HCVA
+
 # Elastic stack (ELK) on Docker
 
 [![Elastic Stack version](https://img.shields.io/badge/Elastic%20Stack-6.8.13-00bfb3?style=flat&logo=elastic-stack)](https://www.elastic.co/blog/category/releases)
