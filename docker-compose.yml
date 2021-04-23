@@ -69,6 +69,18 @@ services:
     depends_on:
       - elasticsearch
 
+  mongo:
+    build:
+      context: mongo/
+      args:
+        MONGO_VERSION: $MONGO_VERSION
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27017:27017"
+
 networks:
   elk:
     driver: bridge
